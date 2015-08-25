@@ -1,0 +1,7 @@
+
+app/js/auth/feideconnect_auth.js
+
+dist/adminlte/fonts/colfax/*.eot
+dist/adminlte/fonts/colfax/*.svg
+dist/adminlte/fonts/colfax/*.ttf
+dist/adminlte/fonts/colfax/*.woff
