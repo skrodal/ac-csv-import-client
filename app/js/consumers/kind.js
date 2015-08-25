@@ -46,7 +46,7 @@ var KIND = (function () {
 				}
 			})
 			.fail(function (jqXHR, textStatus, error) {
-				UTILS.showAuthError("Tjenestetilganger", "Henting av tjenestetilganger (KIND) feilet.");
+				UTILS.showAuthError("Tjenestetilganger XHR", "Henting av tjenestetilganger (KIND) feilet.");
 			});
 	}
 	

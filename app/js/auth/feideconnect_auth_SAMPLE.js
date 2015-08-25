@@ -22,7 +22,7 @@ var jso = new JSO({
 		groups: "https://groups-api.feideconnect.no/groups/me/groups",
 		userinfo: "https://auth.feideconnect.no/userinfo",
 		photo: "https://auth.feideconnect.no/user/media/",
-		kind: "https://ecampus-kind.gk.feideconnect.no/api/kind/",
+		kind: "https://ecampus-kind.gk.feideconnect.no/api/kind-proxy/",
 		adobeconnect: "https://ac-csv-import.gk.feideconnect.no/api/ac-csv-import/"
 	},
 	kind: {
