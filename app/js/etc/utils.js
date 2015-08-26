@@ -1,9 +1,14 @@
 var UTILS = (function() {
 
 	/**** AUTH CYCLE ****/
+	  
+	 
+	 
 	function _updateAuthProgress(msg) {
 		var w = parseInt($('#authProgressBar')[0].style.width.slice(0, -1));
-		$('#authProgressBar').width(w + 34 + '%');
+		// This one here is a bit dumb, but basically change the number so that 
+		// x number of checks adds up to just over 100% when completed..
+		$('#authProgressBar').width(w + 51 + '%');
 		$('#authProgressBar').text(msg);
 
 		if ($('#authProgressBar')[0].style.width.slice(0, -1) >= 100) {
