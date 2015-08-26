@@ -51,6 +51,8 @@ var FEIDE_CONNECT = (function () {
 
 	/**
 	 * Populate USER object with group info, mostly interested in EduPersonAffiliation...
+	 * 
+	 * NOT IN USE ATM - Waiting for FeideConnect to reliably provide org-info for all.
 	 */
 	function _getUserGroups() {
 		return jso.ajax({

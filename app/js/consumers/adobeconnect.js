@@ -156,7 +156,7 @@ var ADOBECONNECT = (function () {
 					room_name_prefix: FEIDE_CONNECT.user().org.shortname + '-' + ADOBECONNECT.folderPrefix() + '-' + ADOBECONNECT.selectedFolder().name + '-',
 					token : breezeToken
 				},
-				oauth: { scopes: {require: ["gk_ac-importer", "gk_ac-importer_admin"]} },
+				oauth: { scopes: {require: ["gk_ac-csv-import", "gk_ac-csv-import_admin"]} },
 				dataType: 'json'
 			})
 				.done(function (data) {
