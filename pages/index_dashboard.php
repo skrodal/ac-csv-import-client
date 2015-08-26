@@ -23,10 +23,12 @@
 						</p>
 
 						<ul class="list-group">
+						<!-- Removed for now - Feide Connect does not reliably provide this info for all orgs ;(  
 						  <li class="list-group-item">
 							  <span id="employeeCheck" class="badge bg-yellow"><i class="fa fa-refresh fa-spin"></i></span>
 							  Tilh&oslash;righet som <code>ansatt</code> i Feide
 						  </li>
+						 -->
 						  <li class="list-group-item">
 							  <span id="subscriberCheck" class="badge bg-yellow"><i class="fa fa-refresh fa-spin"></i></span>
 							  <code class="feideOrg"></code> abonnerer p&aring; Adobe Connect

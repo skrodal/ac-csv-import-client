@@ -10,7 +10,8 @@ var FEIDE_CONNECT = (function () {
 	// Self-invoking
 	(function () {
 		XHR_USER = _getUserInfo();
-		XHR_GROUPS = _getUserGroups();
+		// Remove for now - Feide Connect does not provide reliable info for all orgs 
+		// XHR_GROUPS = _getUserGroups();
 	})();
 
 	function _getUserInfo() {
@@ -103,9 +104,12 @@ var FEIDE_CONNECT = (function () {
 		readyUser: function () {
 			return XHR_USER;
 		},
+		// Remove for now - Feide Connect does not provide reliable info for all orgs 
+		/*
 		readyGroups: function () {
 			return XHR_GROUPS;
 		},
+		*/
 		user: function () {
 			return USER;
 		},
