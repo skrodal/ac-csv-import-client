@@ -60,12 +60,7 @@
 							Lim inn <a href="https://no.wikipedia.org/wiki/CSV" target="_blank">CSV</a> <small><sup><i class="fa fa-external-link"></i></sup></small> med f&oslash;lgende struktur: <code>rom_id</code>, <code>feide_brukernavn</code>:
 						</p>
 
-							<textarea name="" id="txtCSV" class="form-control" rows="6" style="width: 100%;"
-placeholder="1, bruker1@org.no
-1, bruker2@org.no
-2, bruker4@org.no
-2, bruker5@org.no">
-</textarea>
+							<textarea name="" id="txtCSV" class="form-control" rows="6" style="width: 100%;" placeholder="rom,brukernavn"></textarea>
 <!-- Testdata - paste into textarea above...
 gruppe_1, borborson@uninett.no
 gruppe_1, test@feide.no
@@ -230,7 +225,10 @@ gruppe_2, simon@uninett.no
 					<!-- ADOBECONNECT -->
 				</div>
 				<div class="modal-footer bg-light-blue">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					<div class="pull-left">
+						<p>Vær tålmodig; dette kan ta <strong>lang</strong> tid</p>
+					</div>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
 				</div>
 			</div>
 		</div>

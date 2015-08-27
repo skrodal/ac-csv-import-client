@@ -15,6 +15,9 @@ var ADOBECONNECT = (function () {
 	var folderPrefix = false;
 	var breezeToken = null;
 	var serviceVersion = false;
+	
+	//
+	var ajaxSpinner = '<span class="badge bg-yellow"><i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;Vennligst vent...</span>';
 
 	// Mainly for testing/dev
 	function _getAPIRoutes() {
@@ -143,9 +146,12 @@ var ADOBECONNECT = (function () {
 			$.each(CSV_DATA, function (index, csv) {
 				new_csv_arr.push(csv);
 			});
-
+			
+			// Info
 			$resultModalBody.html('<p>1. Kaller Adobe Connect API for oppretting av rom...</p>');
-
+			// Spinner
+			$resultModalBody.append(ajaxSpinner);
+			
 			return jso.ajax({
 				url: jso.config.get("endpoints").adobeconnect + "rooms/create/",
 				method: 'POST',
@@ -162,6 +168,8 @@ var ADOBECONNECT = (function () {
 				.done(function (data) {
 
 					console.log(data);
+					// Done! Remove spinner
+					$('span:last-child', $resultModalBody).remove();
 
 					if (typeof data === 'object') {
 						$resultModalBody.append('<p>&nbsp;&nbsp;&nbsp;&nbsp;OK! Rommene er opprettet!</p>');
@@ -172,6 +180,7 @@ var ADOBECONNECT = (function () {
 					}
 				})
 				.fail(function (jqXHR, textStatus, error) {
+					$('span:last-child', $resultModalBody).remove();
 					$resultModal.modal("hide");
 					var message = jqXHR.responseJSON && jqXHR.responseJSON.message || 'Fikk ingen respons fra tjener. Timeout?';
 					UTILS.alertError("Adobe Connect", "<p>En feil oppstod i samtale med Adobe Connect API:</p><p><code>" + message + "</code></p>");
@@ -185,7 +194,10 @@ var ADOBECONNECT = (function () {
 	// Invoked by createRooms upon completion
 	function createUsers(postData, $resultModal) {
 		var $resultModalBody = $resultModal.find('.modal-body');
+		// Info
 		$resultModalBody.append('<p>2. Kaller Adobe Connect API for oppretting av brukere/hosts...</p>');
+		// Spinner
+		$resultModalBody.append(ajaxSpinner);
 
 		return jso.ajax({
 			url: jso.config.get("endpoints").adobeconnect + "users/create/",
@@ -203,6 +215,10 @@ var ADOBECONNECT = (function () {
 				var hostStatus = '';
 				var responseTable;
 				var responseCSV = "room_id,room_name,room_url,manage_url&#13;&#10;";
+			
+				// Done! Remove spinner
+				$('span:last-child', $resultModalBody).remove();
+				// Show result summary				
 				$resultModalBody.append('<p>&nbsp;&nbsp;&nbsp;&nbsp;OK! Brukere/hosts opprettet! Scroll nedover for informasjon.</p>');
 
 				$resultModalBody.append('<p><span class="label label-success">Rom/Bruker ble opprettet</span></p>');
@@ -247,9 +263,14 @@ var ADOBECONNECT = (function () {
 				saveTextAsFile("responseCSV", "ConnectImport_" + folderPrefix);
 			})
 			.fail(function (jqXHR, textStatus, error) {
+				// Hide spinner
+				$('span:last-child', $resultModalBody).remove();
 				$resultModalBody.modal("hide");
 				var message = jqXHR.responseJSON && jqXHR.responseJSON.message || 'Fikk ingen respons fra tjener. Timeout?';
 				UTILS.alertError("Adobe Connect", "<p>En feil oppstod i samtale med Adobe Connect API:</p><p><code>" + message + "</code></p>");
+				console.log(jqXHR);
+				console.log(textStatus);
+				console.log(error);
 			});
 	}
 
