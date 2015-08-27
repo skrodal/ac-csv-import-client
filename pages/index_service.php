@@ -163,7 +163,7 @@ gruppe_2, simon@uninett.no
 						<p>N&aring; du har fulgt stegene 1-2-3 og er forn&oslash;yd med jobben, klikk knappen under :-)</p>
 
 						<div class="text-center">
-							<button id="btnSubmitPostData" class="btn btn-app btn-lg bg-aqua disabled" data-toggle="modal" data-target="#resultModal">
+							<button id="btnSubmitPostData" class="btn btn-app btn-lg bg-aqua disabled"> <!-- data-toggle="modal" data-target="#resultModal"> -->
 	                            <i class="fa fa-cloud-upload"></i>
 	                        </button>
 						</div>

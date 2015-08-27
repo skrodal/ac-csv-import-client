@@ -76,9 +76,9 @@ $('#btnBuildExampleURL').on('click', function(){
 $('#btnSubmitPostData').on('click', function(){
 	if(ADOBECONNECT.hasRequiredPostData()){
 		ADOBECONNECT.createRooms($('#resultModal'));
+		$('#resultModal').modal();
 	} else {
 		UTILS.alertError('Vent litt...', 'Mangler fortsatt noe info før du kan g&aring; videre. F&oslash;lg steg 1-3...');
-		$('#resultModal').modal('hide');
 	}
 });
 
