@@ -208,7 +208,8 @@ var ADOBECONNECT = (function () {
 				token: breezeToken
 			},
 			oauth: { scopes: {require: ["gk_ac-csv-import", "gk_ac-csv-import_admin"]} },
-			dataType: 'json'
+			dataType: 'json',
+			timeout: 300000 // 5 mins
 		})
 			.done(function (data) {
 				var labelAutocreatedClass = '';
