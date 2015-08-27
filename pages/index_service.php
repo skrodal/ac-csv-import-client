@@ -225,9 +225,6 @@ gruppe_2, simon@uninett.no
 					<!-- ADOBECONNECT -->
 				</div>
 				<div class="modal-footer bg-light-blue">
-					<div class="pull-left">
-						<p>Vær tålmodig; dette kan ta <strong>lang</strong> tid</p>
-					</div>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
 				</div>
 			</div>
