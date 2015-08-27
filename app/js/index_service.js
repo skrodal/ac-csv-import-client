@@ -78,6 +78,7 @@ $('#btnSubmitPostData').on('click', function(){
 		ADOBECONNECT.createRooms($('#resultModal'));
 	} else {
 		UTILS.alertError('Vent litt...', 'Mangler fortsatt noe info før du kan g&aring; videre. F&oslash;lg steg 1-3...');
+		$('#resultModal').modal('hide');
 	}
 });
 
