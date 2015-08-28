@@ -17,7 +17,7 @@ var ADOBECONNECT = (function () {
 	var serviceVersion = false;
 	
 	//
-	var ajaxSpinner = '<span class="badge bg-yellow"><i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;Vennligst vent... dette kan ta lang tid!</span>';
+	var ajaxSpinner = '<span class="badge bg-yellow"><i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;Vennligst vent... Dette kan ta veldig lang tid, så la stå!</span>';
 
 	// Mainly for testing/dev
 	function _getAPIRoutes() {
