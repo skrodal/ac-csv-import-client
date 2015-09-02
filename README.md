@@ -17,4 +17,6 @@ Tilgang i Shared Meetings folder er begrenset til pålogget brukers egen organis
 Klienten er registrert i UNINETT Connect tjenesteplattform og benytter seg av følgende 3.parts APIer (også registrert i Connect):
 
 - https://github.com/skrodal/ac-csv-import-api
+  - Proxy mellom klient og Adobe Connect
 - https://github.com/skrodal/uninett-ecampus-kind
+  - Proxy mellom klient og Kind. Brukes for å etablere om pålogget brukers org abonnerer på tjenesten.
