@@ -20,3 +20,5 @@ Klienten er registrert i UNINETT Connect tjenesteplattform og benytter seg av f�
   - Proxy mellom klient og Adobe Connect
 - https://github.com/skrodal/uninett-ecampus-kind
   - Proxy mellom klient og Kind. Brukes for å etablere om pålogget brukers org abonnerer på tjenesten.
+
+![Preview](/app/img/ConnectImport.png)
