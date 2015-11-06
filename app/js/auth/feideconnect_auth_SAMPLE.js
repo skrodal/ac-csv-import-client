@@ -10,7 +10,7 @@ var DEV = !true;
 
 // Settings pertaining to this client.
 var jso = new JSO({
-	providerID: "CHANGEME TO: ANYTHING",
+	providerID: "FC-ac-csv-import",
 	client_id: "CHANGEME TO: CLIENT_ID IN DASHBOARD",
 	redirect_uri: "CHANGEME TO: REDIRECT URI IN DASHBOARD",
 	authorization: "https://auth.feideconnect.no/oauth/authorization",
