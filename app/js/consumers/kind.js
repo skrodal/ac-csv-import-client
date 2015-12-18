@@ -59,14 +59,14 @@ var KIND = (function () {
 	function _isOrgSubscriber(subscribersArr) {
 		subscriberDetails = {};
 
-		$.each(subscribersArr, function (key, val) {
+		$.each(subscribersArr, function (org, orgObj) {
 			// Extract details for logged in user's org
-			if (val[0].org.toLowerCase() === FEIDE_CONNECT.user().org.id.toLowerCase()) {
+			if (org.toLowerCase() === FEIDE_CONNECT.user().org.id.toLowerCase()) {
 				subscriberDetails = {
-					"support": val[2].support,
-					"contact": val[4].teknisk_ansvarlig,
-					"subscription_status": val[1].abbstatus,
-					"service_url": val[5].tjeneste_uri
+					"support": orgObj.contact_support,
+					"contact": orgObj.contact_person,
+					"subscription_status": orgObj.subscription_code,
+					"service_url": orgObj.service_uri
 				};
 				// OK - Break loop
 				return false;
@@ -85,8 +85,8 @@ var KIND = (function () {
 	function _getSubscriptionCount(subscribersArr) {
 		subscribingOrgNames = [];
 		var count = { 'total': 0, 'full': 0, 'trial': 0, 'other': 0 };
-		$.each(subscribersArr, function (key, val) {
-			switch (val[1].abbstatus) {
+		$.each(subscribersArr, function (org, orgObj) {
+			switch (orgObj.subscription_code) {
 				case 20:
 					count.full++;
 					break;
@@ -100,7 +100,7 @@ var KIND = (function () {
 			count.total++;
 
 			// Simple array just with org names - used extensively elsewhere
-			subscribingOrgNames.push(val[0].org.toLowerCase());
+			subscribingOrgNames.push(org.toLowerCase());
 		});
 		return count;
 	}
