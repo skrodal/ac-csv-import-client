@@ -22,7 +22,8 @@ var KIND = (function () {
 		})
 			.done(function (response) {
 				// Check for and catch errors before done is fired
-				subscribers = JSON.parse(response.data)
+				// subscribers = JSON.parse(response.data)
+				subscribers = response.data;
 				if (!subscribers.status || !subscribers.orgSubscribers) {
 					UTILS.showAuthError("Tjenestetilganger", "Henting av tjenestetilganger (KIND) feilet.");
 					return false;
