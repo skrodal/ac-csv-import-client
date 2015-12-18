@@ -23,19 +23,19 @@ var KIND = (function () {
 			.done(function (response) {
 				// Check for and catch errors before done is fired
 				// subscribers = JSON.parse(response.data)
-				subscribers = response.data;
-				console.log(response);
-				console.log(response.data);
-				if (!subscribers.status || !subscribers.orgSubscribers) {
+
+
+				if (!response.status || !response.data) {
 					UTILS.showAuthError("Tjenestetilganger", "Henting av tjenestetilganger (KIND) feilet.");
 					return false;
 				} else {
 					// All good - process a few things here before done is fired...
-					subscribers = JSON.parse(data).orgSubscribers;
+					// subscribers = JSON.parse(data).orgSubscribers;
+					subscribers = response.data;
 					// Sort by org name
-					subscribers = subscribers.sort(function (a, b) {
-						return (a[0].org.toLowerCase() < b[0].org.toLowerCase()) ? -1 : (a[0].org.toLowerCase() > b[0].org.toLowerCase()) ? 1 : 0;
-					});
+					//subscribers = subscribers.sort(function (a, b) {
+					//	return (a[0].org.toLowerCase() < b[0].org.toLowerCase()) ? -1 : (a[0].org.toLowerCase() > b[0].org.toLowerCase()) ? 1 : 0;
+					//});
 					
 					// Check if user comes from subscribing org (if true, subscriberDetails{} will be populated)
 					if (!_isOrgSubscriber(subscribers)) {
