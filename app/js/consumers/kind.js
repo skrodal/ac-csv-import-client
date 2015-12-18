@@ -17,7 +17,7 @@ var KIND = (function () {
 
 	function _getServiceSubscribers() {
 		return jso.ajax({
-			url: jso.config.get("endpoints").kind + "?method=getOrgServiceSubscriptionListing&kindID=" + jso.config.get("kind").adobeConnectId,
+			url: jso.config.get("endpoints").kind + "service/" + jso.config.get("kind").adobeConnectId + "/subscribers/",
 			dataType: 'json'
 		})
 			.done(function (data) {
