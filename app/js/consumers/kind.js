@@ -20,9 +20,9 @@ var KIND = (function () {
 			url: jso.config.get("endpoints").kind + "service/" + jso.config.get("kind").adobeConnectId + "/subscribers/",
 			dataType: 'json'
 		})
-			.done(function (data) {
+			.done(function (response) {
 				// Check for and catch errors before done is fired
-				subscribers = JSON.parse(data)
+				subscribers = JSON.parse(response.data)
 				if (!subscribers.status || !subscribers.orgSubscribers) {
 					UTILS.showAuthError("Tjenestetilganger", "Henting av tjenestetilganger (KIND) feilet.");
 					return false;
