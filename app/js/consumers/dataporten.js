@@ -2,7 +2,7 @@
 //
 JSO.enablejQuery($);
 
-var FEIDE_CONNECT = (function () {
+var DATAPORTEN = (function () {
 	var USER = {};
 	USER.org = {};
 	var XHR_USER, XHR_GROUPS;
@@ -10,7 +10,7 @@ var FEIDE_CONNECT = (function () {
 	// Self-invoking
 	(function () {
 		XHR_USER = _getUserInfo();
-		// Remove for now - Feide Connect does not provide reliable info for all orgs 
+		// Remove for now - Dataporten does not provide reliable info for all orgs
 		// XHR_GROUPS = _getUserGroups();
 	})();
 
@@ -52,7 +52,7 @@ var FEIDE_CONNECT = (function () {
 	/**
 	 * Populate USER object with group info, mostly interested in EduPersonAffiliation...
 	 * 
-	 * NOT IN USE ATM - Waiting for FeideConnect to reliably provide org-info for all.
+	 * NOT IN USE ATM - Waiting for Dataporten to reliably provide org-info for all.
 	 */
 	function _getUserGroups() {
 		return jso.ajax({
@@ -106,7 +106,7 @@ var FEIDE_CONNECT = (function () {
 		readyUser: function () {
 			return XHR_USER;
 		},
-		// Remove for now - Feide Connect does not provide reliable info for all orgs 
+		// Remove for now - Dataporten does not provide reliable info for all orgs
 		/*
 		readyGroups: function () {
 			return XHR_GROUPS;

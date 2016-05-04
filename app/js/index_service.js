@@ -64,7 +64,7 @@ $('#btnBuildExampleURL').on('click', function(){
 	if(prefix.length < 1) {
 		UTILS.alertError('Tomt?', 'Skriv inn en prefiks i feltet f&oslash;rst.')
 	} else if(UTILS.isAlphaNumeric(prefix)) {
-		$('#exampleURL').html('<small>https://connect.uninett.no/<code>' + FEIDE_CONNECT.user().org.shortname + '</code>-<code>' + prefix + '</code>-<code>' + ADOBECONNECT.selectedFolder().name + '</code>-<code>{rom_id}</code></small>');
+		$('#exampleURL').html('<small>https://connect.uninett.no/<code>' + DATAPORTEN.user().org.shortname + '</code>-<code>' + prefix + '</code>-<code>' + ADOBECONNECT.selectedFolder().name + '</code>-<code>{rom_id}</code></small>');
 		$('#exampleURL').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 		// Set
 		ADOBECONNECT.setFolderPrefix(prefix);

@@ -14,7 +14,7 @@ Tilgang i Shared Meetings folder er begrenset til pålogget brukers egen organis
 
 - fornavn.etternavn@lærested.no vil kun ha mulighet til å opprette innhold i mapper under /Shared Meetings/lærested/
 
-Klienten er registrert i UNINETT Connect tjenesteplattform og benytter seg av følgende 3.parts APIer (også registrert i Connect):
+Klienten er registrert i UNINETT Dataporten og benytter seg av følgende 3.parts APIer (også registrert i Dataporten):
 
 - https://github.com/skrodal/ac-csv-import-api
   - Proxy mellom klient og Adobe Connect

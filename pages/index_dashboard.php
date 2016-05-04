@@ -23,7 +23,7 @@
 						</p>
 
 						<ul class="list-group">
-						<!-- Removed for now - Feide Connect does not reliably provide this info for all orgs ;(  
+						<!-- Removed for now - Dataporten does not reliably provide this info for all orgs ;(
 						  <li class="list-group-item">
 							  <span id="employeeCheck" class="badge bg-yellow"><i class="fa fa-refresh fa-spin"></i></span>
 							  Tilh&oslash;righet som <code>ansatt</code> i Feide
@@ -98,13 +98,13 @@
 				<!-- Session info (DEV) -->
 				<div class="box box-warning collapsed-box">
 					<div class="box-header with-border">
-						<h3 class="box-title ion-code-working"> Sesjonsinformasjon (fra Feide Connect)</h3>
+						<h3 class="box-title ion-code-working"> Sesjonsinformasjon (fra Dataporten)</h3>
 						<div class="box-tools pull-right">
 							<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
 						</div>
 					</div>
 					<div class="box-body">
-						<pre id="connectSessionInfo"></pre>
+						<pre id="dataportenSessionInfo"></pre>
 					</div><!-- /.box-body -->
 				</div><!-- /.box -->
 			</div>

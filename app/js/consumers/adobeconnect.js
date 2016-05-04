@@ -1,10 +1,10 @@
 /* global saveTextAsFile */
-/* global FEIDE_CONNECT */
+/* global DATAPORTEN */
 /* global $ */
 /* global jso */
 /* global UTILS */
 /**
- * Speaks with Adobe Connect proxy API behind Feide Connect gatekeeper.
+ * Speaks with Adobe Connect proxy API behind Dataporten gatekeeper.
  */
 
 var ADOBECONNECT = (function () {
@@ -57,7 +57,7 @@ var ADOBECONNECT = (function () {
 		// No need to talk to server if we have already done so
 		if(orgFolderNav) return orgFolderNav;
 
-		var orgFolder = FEIDE_CONNECT.user().org.shortname;
+		var orgFolder = DATAPORTEN.user().org.shortname;
 
 		return jso.ajax({
 			url: jso.config.get("endpoints").adobeconnect + "folder/" + orgFolder + "/nav/",
@@ -156,10 +156,10 @@ var ADOBECONNECT = (function () {
 				url: jso.config.get("endpoints").adobeconnect + "rooms/create/",
 				method: 'POST',
 				data: {
-					user_org_shortname: FEIDE_CONNECT.user().org.shortname,
+					user_org_shortname: DATAPORTEN.user().org.shortname,
 					room_folder_sco: ADOBECONNECT.selectedFolder().id,
 					csv_data: new_csv_arr,
-					room_name_prefix: FEIDE_CONNECT.user().org.shortname + '-' + ADOBECONNECT.folderPrefix() + '-' + ADOBECONNECT.selectedFolder().name + '-',
+					room_name_prefix: DATAPORTEN.user().org.shortname + '-' + ADOBECONNECT.folderPrefix() + '-' + ADOBECONNECT.selectedFolder().name + '-',
 					token : breezeToken
 				},
 				oauth: { scopes: {require: ["gk_ac-csv-import", "gk_ac-csv-import_admin"]} },
@@ -203,7 +203,7 @@ var ADOBECONNECT = (function () {
 			url: jso.config.get("endpoints").adobeconnect + "users/create/",
 			method: 'POST',
 			data: {
-				user_org_shortname: FEIDE_CONNECT.user().org.shortname,
+				user_org_shortname: DATAPORTEN.user().org.shortname,
 				data: postData,
 				token: breezeToken
 			},

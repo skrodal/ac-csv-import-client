@@ -10,7 +10,7 @@ var KIND = (function () {
 	// Self-invoking
 	(function () {
 		// Need user info before we can talk to Kind...
-		$.when(FEIDE_CONNECT.readyUser()).done(function () {
+		$.when(DATAPORTEN.readyUser()).done(function () {
 			XHR_KIND = _getServiceSubscribers();
 		})
 	})();
@@ -61,7 +61,7 @@ var KIND = (function () {
 
 		$.each(subscribersArr, function (org, orgObj) {
 			// Extract details for logged in user's org
-			if (org.toLowerCase() === FEIDE_CONNECT.user().org.id.toLowerCase()) {
+			if (org.toLowerCase() === DATAPORTEN.user().org.id.toLowerCase()) {
 				subscriberDetails = {
 					"support": orgObj.contact_support,
 					"contact": orgObj.contact_person,
@@ -107,12 +107,12 @@ var KIND = (function () {
 
 	/** Accessible **/
 	function isSuperAdmin() {
-		return (FEIDE_CONNECT.user().username.indexOf("@uninett.no") > -1);
+		return (DATAPORTEN.user().username.indexOf("@uninett.no") > -1);
 	}
 
 	function isOrgAdmin() {
 		if (subscriberDetails) {
-			return (FEIDE_CONNECT.user().email.indexOf(subscriberDetails.contact.e_post) > -1);
+			return (DATAPORTEN.user().email.indexOf(subscriberDetails.contact.e_post) > -1);
 		}
 		return false;
 	}
