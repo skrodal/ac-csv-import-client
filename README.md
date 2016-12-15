@@ -22,3 +22,7 @@ Klienten er registrert i UNINETT Dataporten og benytter seg av følgende 3.parts
   - Proxy mellom klient og Kind. Brukes for å etablere om pålogget brukers org abonnerer på tjenesten.
 
 ![Preview](/app/img/ConnectImport.png)
+
+## Annet ##
+
+Utviklet av Simon Skrødal for UNINETT
